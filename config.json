@@ -1,0 +1,12 @@
+{
+    "train":
+    {
+        "train_img_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc\\train\\img",
+        "train_ann_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc\\train\\ann"
+    },
+    "test":
+    {
+        "test_img_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc\\test\\img",
+        "test_ann_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc\\test\\ann"
+    }
+}
