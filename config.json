@@ -2,15 +2,12 @@
     "train":
     {
         "train_img_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc\\train\\img",
-        "train_ann_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc\\train\\ann"
+        "train_ann_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc\\train\\ann",
+        "label_files": "C:\\Users\\kruth\\Datasets\\PlantDoc\\train\\labels"
     },
     "test":
     {
         "test_img_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc\\test\\img",
         "test_ann_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc\\test\\ann"
-    },
-    "output_dir":
-    {
-        "label_files": "C:\\Users\\kruth\\Datasets\\PlantDoc\\output\\label_files"
     }
 }
