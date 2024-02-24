@@ -8,6 +8,7 @@
     "test":
     {
         "test_img_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc\\test\\img",
-        "test_ann_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc\\test\\ann"
+        "test_ann_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc\\test\\ann",
+        "label_files": "C:\\Users\\kruth\\Datasets\\PlantDoc\\test\\labels"
     }
 }
