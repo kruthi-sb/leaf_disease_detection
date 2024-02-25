@@ -1,7 +1,7 @@
 {
     "train":
     {
-        "train_img_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc\\train\\img",
+        "train_img_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc\\train\\images",
         "train_ann_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc\\train\\ann",
         "label_files": "C:\\Users\\kruth\\Datasets\\PlantDoc\\train\\labels"
     },
