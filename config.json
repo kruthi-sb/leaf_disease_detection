@@ -1,14 +1,26 @@
 {
     "train":
     {
-        "train_img_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc\\train\\images",
-        "train_ann_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc\\train\\ann",
-        "label_files": "C:\\Users\\kruth\\Datasets\\PlantDoc\\train\\labels"
+        "train_img_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc2\\train\\images1",
+        "train_ann_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc2\\train\\ann",
+        "label_files": "C:\\Users\\kruth\\Datasets\\PlantDoc2\\train\\labels1"
     },
     "test":
     {
-        "test_img_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc\\test\\img",
-        "test_ann_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc\\test\\ann",
-        "label_files": "C:\\Users\\kruth\\Datasets\\PlantDoc\\test\\labels"
+        "test_img_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc2\\test\\images1",
+        "test_ann_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc2\\test\\ann",
+        "label_files": "C:\\Users\\kruth\\Datasets\\PlantDoc2\\test\\labels1"
+    },
+    "new_train":
+    {
+        "new_train_img_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc1\\new_train\\images",
+        "new_train_ann_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc1\\new_train\\ann",
+        "label_files": "C:\\Users\\kruth\\Datasets\\PlantDoc1\\new_train\\labels"
+    },
+    "new_val":
+    {
+        "new_val_img_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc1\\new_val\\images",
+        "new_val_ann_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc1\\new_val\\ann",
+        "label_files": "C:\\Users\\kruth\\Datasets\\PlantDoc1\\new_val\\labels"
     }
 }
