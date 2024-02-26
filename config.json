@@ -10,5 +10,10 @@
         "test_img_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc2\\test\\images1",
         "test_ann_folder": "C:\\Users\\kruth\\Datasets\\PlantDoc2\\test\\ann",
         "label_files": "C:\\Users\\kruth\\Datasets\\PlantDoc2\\test\\labels1"
+    },
+    "yolov5":
+    {
+        "yolov5":"C:\\Users\\kruth\\leaf_disease_detection\\yolov5",
+        "weights":"C:\\Users\\kruth\\leaf_disease_detection\\yolov5\\runs\\train\\leaf_detect35\\weights\\best.pt"
     }
 }
