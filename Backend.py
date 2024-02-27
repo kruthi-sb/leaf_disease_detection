@@ -88,7 +88,7 @@ class Backend:
             # Get the class name from the class index
             class_name = list(self.class_dict.keys())[list(self.class_dict.values()).index(int(class_index))]
             print("Class name:", class_name)
-            st.write("Class name:", class_name)
+            st.write(" # Class name:", class_name)
             
             return image, class_name
         # if labels folder does not exist, return image and None
