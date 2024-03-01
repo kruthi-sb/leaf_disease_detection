@@ -4,6 +4,10 @@
 
 This project carries out "leaf disease detection" using **[PlantDoc Dataset](https://github.com/pratikkayal/PlantDoc-Object-Detection-Dataset)** and **[YOLOv5](https://github.com/ultralytics/yolov5)** model. The remedy recommendation is given by Gemini API, the large language model by Google. A Web-app is created using Streamlit to provide a user-friendly interface for the user to interact with the model. 
 
+## Overview
+
+https://github.com/kruthi-sb/leaf_disease_detection/blob/main/app%20%C2%B7%20Streamlit%20-%20Brave%202024-02-26%2020-39-08.mp4
+
 ## Dataset Description
 
 Dataset source: https://datasetninja.com/plantdoc
