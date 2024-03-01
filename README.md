@@ -114,7 +114,7 @@ PlantDoc
 The Dataset is now ready for training.
 
 3. **Using YOLOv5 for training:** 
-The (YOLOv5 gihub repository)[https://github.com/ultralytics/yolov5] is cloned. A ```data.yaml``` is created inside the data folder of yolov5.
+The [YOLOv5 gihub repository](https://github.com/ultralytics/yolov5) is cloned. A ```data.yaml``` is created inside the data folder of yolov5.
 The ```data.yaml``` file consists of the path to the train and test images, the number of classes and the names of the classes. 
 ```yaml
 train: C:\Users\path\to\train\images
