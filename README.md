@@ -6,7 +6,6 @@ This project carries out "leaf disease detection" using **[PlantDoc Dataset](htt
 
 ## Overview
 
-https://github.com/kruthi-sb/leaf_disease_detection/blob/main/app%20%C2%B7%20Streamlit%20-%20Brave%202024-02-26%2020-39-08.mp4
 
 ## Dataset Description
 
