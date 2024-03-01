@@ -2,6 +2,12 @@ import streamlit as st
 from PIL import Image
 import os
 from Detect import DetectAndRespond  # Import your Backend class from your module
+import json
+
+# get image folder path from config
+with open('config.json', 'r') as file:
+    config = json.load(file)
+    image_folder_path = config["test_img"]["img_folder_path"]
 
 # build the UI
 st.title("Plant Disease Detection and Remedy Recommendation")
@@ -19,7 +25,7 @@ if uploaded_file is not None:
 
     # create an instance of the Backend class
     # give path to the uploaded file
-    images_path = "C:\\Users\\kruth\\Datasets\\PlantDoc2\\test\\images1\\"
+    images_path = image_folder_path
     file_path = images_path + file_name
     st.write(file_path)
     backend = DetectAndRespond(file_path)

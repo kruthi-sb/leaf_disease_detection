@@ -12,7 +12,7 @@ import streamlit as st
 class DetectAndRespond:
     def __init__(self, img_path):
         self.img_path = img_path
-        with open('C:\\Users\\kruth\\leaf_disease_detection\\config.json') as f:
+        with open('config.json') as f:
             self.config = json.load(f)
         self.yolov5_path = self.config['yolov5']["yolov5"]
         self.weights_path = self.config["yolov5"]['weights']
