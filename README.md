@@ -165,7 +165,7 @@ conda env create -f environment.yml
 ```
 3. Activate the environment:
 ```bash
-conda activate leaf_detect
+conda activate tf_gpu
 ```
 4. Create a ```config.json``` file with all the necessary file and folder paths of the dataset and model (yolov5).
 5. Run the app.py file using the following command:
