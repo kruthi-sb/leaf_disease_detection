@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
 import os
-from Backend import Backend  # Import your Backend class from your module
+from Detect import DetectAndRespond  # Import your Backend class from your module
 
 # build the UI
 st.title("Plant Disease Detection and Remedy Recommendation")
@@ -22,7 +22,7 @@ if uploaded_file is not None:
     images_path = "C:\\Users\\kruth\\Datasets\\PlantDoc2\\test\\images1\\"
     file_path = images_path + file_name
     st.write(file_path)
-    backend = Backend(file_path)
+    backend = DetectAndRespond(file_path)
     response = backend.run_all()
 
     # display the result

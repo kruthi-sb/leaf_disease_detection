@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import streamlit as st
 
-class Backend:
+class DetectAndRespond:
     def __init__(self, img_path):
         self.img_path = img_path
         with open('C:\\Users\\kruth\\leaf_disease_detection\\config.json') as f:
