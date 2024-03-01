@@ -66,13 +66,21 @@ class DetectAndRespond:
         #plt.imshow(image)
         #plt.axis('off')
         # display the image using streamlit
-        st.write("Detected Image")
+        st.write(" ## Detected Image:")
         st.image(image, caption="Detected Image", use_column_width=True)
 
         # Check if labels folder exists
         if os.path.exists(labels_folder_path):
+            # check if there are any files in the labels folder
+            if len(os.listdir(labels_folder_path)) == 0:
+                print("Labels folder is empty in the latest detection folder.")
+                st.write("## Detection Failed!")
+                st.write("Labels folder is empty in the latest detection folder.")
+                # go to previous directory
+                os.chdir('..')
+                return image, None
             print("Detection successful!")
-            st.write("Detection successful!")
+            st.write("## Detection successful!")
 
             # Get the path of the labels file
             labels_file_path = os.path.join(labels_folder_path, os.listdir(labels_folder_path)[0])
@@ -88,13 +96,17 @@ class DetectAndRespond:
             # Get the class name from the class index
             class_name = list(self.class_dict.keys())[list(self.class_dict.values()).index(int(class_index))]
             print("Class name:", class_name)
-            st.write(" # Class name:", class_name)
-            
+            st.write(" ### Class name:", class_name)
+            # go to previous directory
+            os.chdir('..')
             return image, class_name
         # if labels folder does not exist, return image and None
         else:
             print("Labels folder does not exist in the latest detection folder.")
+            st.write("# Detection Failed!")
             st.write("Labels folder does not exist in the latest detection folder.")
+            # go to previous directory
+            os.chdir('..')
             return image, None
     
     # utility function to turn response into markdown content
@@ -111,6 +123,7 @@ class DetectAndRespond:
 
         # if class_name exists, get response from gemini-pro model
         if class_name:
+            st.write("## Response from gemini-pro:\n")
             model = genai.GenerativeModel('gemini-pro')
             prompt = f"I want the information on {class_name}. If it is a disease, then provide remedies to cure the disease."
             response = model.generate_content(prompt)
@@ -119,7 +132,8 @@ class DetectAndRespond:
         
         # if detection is not successful, get response from gemini-vision-pro model
         else:
-            model = genai.GenerativeModel('gemini-vision-pro')
+            st.write("## Response from gemini-pro-vision:\n")
+            model = genai.GenerativeModel('gemini-pro-vision')
             prompt = "Detect the type of plant and the disease if any. If it is a disease, then provide remedies to cure the disease."
             response = model.generate_content([prompt, image])
             #self.to_markdown(response.text)

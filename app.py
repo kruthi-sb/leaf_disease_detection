@@ -4,6 +4,9 @@ import os
 from Detect import DetectAndRespond  # Import your Backend class from your module
 import json
 
+# Run StreamLit using:
+# streamlit run --server.enableCORS false --server.enableXsrfProtection false app.py
+
 # get image folder path from config
 with open('config.json', 'r') as file:
     config = json.load(file)
