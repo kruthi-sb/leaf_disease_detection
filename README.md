@@ -12,6 +12,7 @@ The PlantDoc is a dataset for plant disease detection and classification. The da
 
 ## Dataset Folder Structure
 
+The dataset is organized in the following folder structure:
 ```
 PlantDoc
 │
@@ -69,5 +70,79 @@ The annotation folder consists of json files with the following structure:
     ]
 }
 ```
+
+In the above json file, the classTitle is the label of the object and the points are the coordinates of the bounding box. The first 2 coordinates  represent xmin and ymin. The next 2 coordinates represent xmax and ymax.
+
+The following classes are present in the dataset:
+['Strawberry leaf', 'Peach leaf', 'Tomato leaf mosaic virus', 'Soyabean leaf', 'grape leaf', 'Tomato leaf bacterial spot', 'Bell_pepper leaf', 'Tomato leaf', 'Apple leaf', 'Apple Scab Leaf', 'Potato leaf', 'Potato leaf early blight', 'Tomato leaf yellow virus', 'Tomato Septoria leaf spot', 'Corn leaf blight', 'Potato leaf late blight', 'Bell_pepper leaf spot', 'Squash Powdery mildew leaf', 'Tomato two spotted spider mites leaf', 'Tomato mold leaf', 'Cherry leaf', 'Tomato leaf late blight', 'Apple rust leaf', 'Tomato Early blight leaf', 'Corn Gray leaf spot', 'Blueberry leaf', 'Corn rust leaf', 'grape leaf black rot', 'Raspberry leaf']
+
+## Methodology
+NOTE:  The following 2 steps are done for both train and test datasets.
+
+1. We need to load the images in PIL format into a list. The coordinates and the labels are stored into a dictionary: {'boxes': boxes, 'labels': labels}. The boxes are in the format: [xmin, ymin, xmax, ymax]. The labels are in the format: [label1, label2, label3, ...]. This is done for each bounding box in the image. The ```load_dataset``` function in load_data_labels.ipynb is used for this job.
+
+2. We need to create text files for each image. It is named after the corresponding image with .txt extension. The text file consists:
+```text
+class_id x_center y_center width height
+```
+The ```create_labels``` function does this task.
+The text files are manually moved to the repective img folder. 
+Now the folder structure is:
+```
+PlantDoc
+│   
+└───train
+│   └───img
+|   |   └───1img.jpg
+|   |   └───1img.txt
+|   |   └───2img.jpg
+|   |   └───2img.txt
+│   └───ann
+|       └───1img.json
+|       └───2img.json
+└───test
+    └───img
+    |   └───1img.jpg
+    |   └───1img.txt
+    |   └───2img.jpg
+    |   └───2img.txt
+    └───ann
+        └───1img.json
+        └───2img.json
+```
+The Dataset is now ready for training.
+
+3. The YOLOv5 gihub repository is cloned. A ```data.yaml``` is created inside the data folder of yolov5.
+The ```data.yaml``` file consists of the path to the train and test images, the number of classes and the names of the classes. 
+```yaml
+train: C:\Users\path\to\train\images
+val: C:\Users\path\to\test\images
+
+nc: 29  
+names: ['Strawberry leaf', 'Peach leaf', 'Tomato leaf mosaic virus', 'Soyabean leaf', 'grape leaf', 'Tomato leaf bacterial spot', 'Bell_pepper leaf', 'Tomato leaf', 'Apple leaf', 'Apple Scab Leaf', 'Potato leaf', 'Potato leaf early blight', 'Tomato leaf yellow virus', 'Tomato Septoria leaf spot', 'Corn leaf blight', 'Potato leaf late blight', 'Bell_pepper leaf spot', 'Squash Powdery mildew leaf', 'Tomato two spotted spider mites leaf', 'Tomato mold leaf', 'Cherry leaf', 'Tomato leaf late blight', 'Apple rust leaf', 'Tomato Early blight leaf', 'Corn Gray leaf spot', 'Blueberry leaf', 'Corn rust leaf', 'grape leaf black rot', 'Raspberry leaf']
+```
+4. The ```train.py``` file is run to train the model with the following command:
+```bash
+!python train.py --img 640 --batch 15 --epochs 20 --data data.yaml --cfg yolov5s.yaml --name leaf_detect
+```
+Here:
+- --img 640: The input image size is 640x640
+- --batch 15: The batch size is the number of images processed in one iteration (15 images)
+- --epochs 20: The number of times the model is trained on the entire dataset (20 times)
+- --data data.yaml: The path to the data.yaml file
+- --cfg yolov5s.yaml: The path to the configuration file of yolov5 small model
+- --name leaf_detect: The name of the model (directory in which the results will be stored)
+
+The trained model is saved in the runs folder which consists of the model weights, graphs, validation image results with bounding boxes predicted by the model.
+
+Detection of leaf disease of a single image input is done using the following command:
+```bash
+!python detect.py --weights runs/train/leaf_detect/weights/best.pt --img 640 --conf 0.4 --source C:\Users\path\to\test\images
+```
+
+
+
+
+
 
 
