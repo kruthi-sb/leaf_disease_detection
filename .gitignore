@@ -1,2 +1,3 @@
 config.json
 yolov5/
+__pycache__/
